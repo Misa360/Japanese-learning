@@ -1,0 +1,9 @@
+target/
+.idea/
+*.iml
+.vscode/
+.env
+storage/uploads/*
+storage/logs/*
+storage/cache/*
+!storage/*/.gitkeep

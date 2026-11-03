@@ -1,0 +1,33 @@
+/* components.css - nut, the, huy hieu, form, bang, flash, phan trang, thanh tien do */
+.jl-card{border:1px solid var(--jl-border);border-radius:8px;padding:12px;background:#fff}
+.jl-badges{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.jl-badge{display:inline-block;padding:2px 8px;border-radius:12px;background:#eef;font-size:.8em}
+.jl-badge-free{background:#e3f6e3}.jl-badge-coin{background:#fff1cc}
+.jl-locked{color:#a33}
+.jl-btn{display:inline-block;padding:8px 14px;border:0;border-radius:6px;background:var(--jl-red);color:#fff;cursor:pointer;text-decoration:none;font:inherit}
+.jl-btn[disabled]{background:#999;cursor:default}
+.jl-btn-secondary{background:var(--jl-dark)}
+.jl-btn-small{padding:4px 10px}
+.jl-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:16px 0}
+.jl-flash{padding:10px 14px;border-radius:6px;margin:10px 0}
+.jl-flash-success{background:#e3f6e3}.jl-flash-error{background:#fde4e4}.jl-flash-info{background:#e6f0fb}
+progress{width:100%;height:10px}
+.jl-form,.jl-auth-card form{display:flex;flex-direction:column;gap:6px}
+.jl-form label,.jl-auth-card label{font-weight:600;margin-top:8px}
+input[type=text],input[type=email],input[type=password],input[type=file],select{padding:8px;border:1px solid #bbb;border-radius:6px;font:inherit;max-width:100%}
+.jl-form button,.jl-auth-card button{margin-top:12px;align-self:flex-start}
+.jl-field-error{color:#b00020;font-size:.9em}
+.jl-avatar{border-radius:50%;object-fit:cover}
+.jl-scroll{overflow-x:auto}
+.jl-table{border-collapse:collapse;width:100%;background:#fff}.jl-table th,.jl-table td{border:1px solid var(--jl-border);padding:6px 8px;text-align:left}
+.jl-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.jl-tabs a{padding:6px 12px;border-radius:16px;background:#fff;border:1px solid var(--jl-border);text-decoration:none;color:#222}
+.jl-tabs a.is-active{background:var(--jl-red);color:#fff;border-color:var(--jl-red)}
+.jl-pagination ul{display:flex;gap:6px;list-style:none;padding:0;flex-wrap:wrap}
+.jl-pagination a{display:block;padding:4px 10px;border:1px solid var(--jl-border);border-radius:6px;text-decoration:none;background:#fff}
+.jl-pagination a.is-active{background:var(--jl-red);color:#fff;border-color:var(--jl-red)}
+.jl-ellipsis{padding:4px 6px}
+.jl-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+.jl-stat{background:#fff;border:1px solid var(--jl-border);border-radius:8px;padding:12px;text-align:center}
+.jl-stat-num{display:block;font-size:1.8em;font-weight:700}
+.jl-motivation{background:#fff8e1;border-radius:8px;padding:10px 14px}

@@ -1,0 +1,13 @@
+/* learning.css - lo trinh, chi tiet khoa, trang hoc bai */
+.jl-level{margin:24px 0}
+.jl-lessons{list-style:none;padding:0}.jl-lessons li{padding:4px 0}
+.jl-tick{display:inline-block;width:1.4em}
+.is-done .jl-tick{color:#2a8a2a}
+.jl-lesson-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px}
+@media(max-width:800px){.jl-lesson-layout{grid-template-columns:1fr}}
+.jl-player{position:relative;aspect-ratio:16/9;background:#000;margin:12px 0}
+.jl-player iframe,.jl-player video,.jl-player #yt-player{position:absolute;inset:0;width:100%;height:100%;border:0}
+.jl-text{white-space:pre-wrap}
+.jl-kanji-char{font-size:48px;line-height:1}
+.jl-side-item{padding:4px 0}.jl-side-item.is-current{font-weight:700}
+.jl-lesson-nav{display:flex;gap:8px;margin:20px 0}

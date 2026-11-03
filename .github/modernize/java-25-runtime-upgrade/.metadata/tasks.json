@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Tasks template for the OpenJDK 25 runtime modernization plan.",
+  "tasks": [
+    {
+      "type": "upgrade",
+      "id": "001-upgrade-java-runtime-openjdk-25",
+      "description": "Upgrade the JLearn project runtime to OpenJDK 25. Addresses assessment issue: Java Version is not the latest LTS (azure-java-version-02000), verified at pom.xml:12; current assessed JDK is 11.",
+      "reason": "The assessment and current Maven compiler configuration show that the project targets Java 11, while OpenJDK 25 is the verified latest LTS target as of 2026-11-01.",
+      "requirements": "Upgrade the full project's Java compilation/runtime target to OpenJDK 25. Update the Maven build configuration and directly related runtime, deployment, and documentation references so they consistently describe and support Java 25. Review compatibility of application code and existing build/runtime dependencies, and make only changes required to preserve existing behavior. Retain the current Servlet 4.0/JSP/JSTL javax.* APIs, WAR packaging, and Tomcat-based deployment unless evidence demonstrates a specific change is required for Java 25; do not broaden this into a framework upgrade. Validate with the Maven WAR build and existing focused tests, and perform a narrow startup/smoke check where the available runtime permits. Do not address unrelated cloud-readiness or security findings.",
+      "successCriteria": {
+        "passBuild": "true",
+        "generateNewUnitTests": "false",
+        "passUnitTests": "true"
+      }
+    }
+  ],
+  "metadata": {
+    "planName": "java-25-runtime-upgrade",
+    "projectName": "jlearn-web",
+    "language": "java",
+    "createdAt": "2026-11-01T22:22:59+07:00",
+    "version": "1.0"
+  }
+}

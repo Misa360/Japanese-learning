@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+  <display-name>JLearn</display-name>
+
+  <!-- THU TU KHAI BAO = THU TU CHAY. Encoding phai dau tien (dat UTF-8 truoc khi bat ky filter nao doc tham so). -->
+  <filter><filter-name>EncodingFilter</filter-name><filter-class>com.jlearn.filter.EncodingFilter</filter-class></filter>
+  <filter><filter-name>SecurityHeadersFilter</filter-name><filter-class>com.jlearn.filter.SecurityHeadersFilter</filter-class></filter>
+  <filter><filter-name>RateLimitFilter</filter-name><filter-class>com.jlearn.filter.RateLimitFilter</filter-class></filter>
+  <filter><filter-name>AuthenticationFilter</filter-name><filter-class>com.jlearn.filter.AuthenticationFilter</filter-class></filter>
+  <filter><filter-name>GuestFilter</filter-name><filter-class>com.jlearn.filter.GuestFilter</filter-class></filter>
+  <filter><filter-name>AdminFilter</filter-name><filter-class>com.jlearn.filter.AdminFilter</filter-class></filter>
+  <filter><filter-name>CsrfFilter</filter-name><filter-class>com.jlearn.filter.CsrfFilter</filter-class></filter>
+
+  <filter-mapping><filter-name>EncodingFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
+  <filter-mapping><filter-name>SecurityHeadersFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
+  <filter-mapping><filter-name>RateLimitFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
+  <filter-mapping><filter-name>AuthenticationFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
+  <filter-mapping><filter-name>GuestFilter</filter-name><url-pattern>/login</url-pattern><url-pattern>/register</url-pattern></filter-mapping>
+  <filter-mapping><filter-name>AdminFilter</filter-name><url-pattern>/admin/*</url-pattern></filter-mapping>
+  <filter-mapping><filter-name>CsrfFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
+
+  <!-- Servlet dung @WebServlet, Listener dung @WebListener (khong khai bao o day). -->
+
+  <error-page><error-code>400</error-code><location>/WEB-INF/views/errors/400.jsp</location></error-page>
+  <error-page><error-code>403</error-code><location>/WEB-INF/views/errors/403.jsp</location></error-page>
+  <error-page><error-code>404</error-code><location>/WEB-INF/views/errors/404.jsp</location></error-page>
+  <error-page><error-code>500</error-code><location>/WEB-INF/views/errors/500.jsp</location></error-page>
+
+  <session-config>
+    <session-timeout>60</session-timeout>
+    <cookie-config>
+      <http-only>true</http-only>
+      <!-- <secure>true</secure>  bat khi chay HTTPS. SameSite=Lax cau hinh o META-INF/context.xml -->
+    </cookie-config>
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
+
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <page-encoding>UTF-8</page-encoding>
+      <trim-directive-whitespaces>true</trim-directive-whitespaces>
+    </jsp-property-group>
+  </jsp-config>
+</web-app>

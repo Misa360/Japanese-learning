@@ -2,7 +2,7 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
--- 1. TẠO TÀI KHOẢN MẪU (Mật khẩu mặc định là: password123)
+-- 1. TẠO TÀI KHOẢN MẪU (Mật khẩu mặc định là: password  — KHÔNG phải password123)
 -- Hash bên dưới được tạo bằng bcrypt ($2y$10$...) chuẩn cho PHP/Laravel/NodeJS
 INSERT INTO users (id, role_id, full_name, email, password_hash, coin_balance, status, email_verified_at) VALUES 
 (1, 1, 'Quản Trị Viên', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1000, 'active', NOW()),
@@ -90,3 +90,6 @@ INSERT INTO rewards (id, title, description, coin_cost, reward_type, stock_quant
 (2, 'Avatar Khung Vàng Giới Hạn', 'Trang trí hồ sơ cá nhân đặc biệt', 500, 'avatar_frame', NULL, 'active');
 
 SET FOREIGN_KEY_CHECKS = 1;
+-- Tai khoan mau co username de dang nhap bang username (mat khau: password)
+UPDATE users SET username = 'admin' WHERE id = 1;
+UPDATE users SET username = 'student' WHERE id = 2;

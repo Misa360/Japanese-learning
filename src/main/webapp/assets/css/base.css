@@ -1,0 +1,69 @@
+/* base.css - Riki Nihongo modern typography, reset, variables */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --jl-teal: #2bd3c7;
+  --jl-teal-dark: #0f766e;
+  --jl-teal-light: #d9fbf6;
+  --jl-yellow: #f3b64c;
+  --jl-gold: #f7bd55;
+  --jl-coral: #5eead4;
+  --jl-rose: #14b8a6;
+  --jl-dark: #282523;
+  --jl-text: #494542;
+  --jl-bg: #fffdfa;
+  --jl-card-bg: #ffffff;
+  --jl-border: #eee7df;
+  --jl-muted: #817a73;
+  --jl-radius: 16px;
+  --jl-radius-sm: 10px;
+  --jl-radius-lg: 28px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--jl-text);
+  background: var(--jl-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--jl-teal-dark);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--jl-teal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  color: var(--jl-dark);
+  line-height: 1.25;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.jl-muted {
+  color: var(--jl-muted);
+  font-size: 0.875rem;
+}
+
+/* Dotted background pattern */
+.bg-riki-dots {
+  background-color: var(--jl-teal-light);
+  background-image: radial-gradient(#47cfc5 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+}
+

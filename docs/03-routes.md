@@ -33,4 +33,4 @@ Mọi POST phải có `csrf_token` (field) hoặc header `X-CSRF-Token`.
 | /quiz | QuizServlet (khung) | F19–F21 | |
 | /rewards, /coins | RewardServlet (khung) | F25–F27 | |
 | /badges, /goals | BadgeServlet, GoalServlet (khung) | F30–F31 | |
-| /admin/... | controller/admin/Admin*Servlet (khung) | F33–F38 | admin |
+| /admin/... | controller/admin/Admin*Servlet (khung) | F33–F39 | admin (AdminFilter) — chi tiết ở docs/08-admin-modules.md |

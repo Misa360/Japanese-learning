@@ -11,6 +11,7 @@ SOURCE schema/09_admin.sql;
 SOURCE migrations/001_users_username_target_level.sql;
 SOURCE migrations/002_courses_unlock_enrollment_last_lesson.sql;
 SOURCE migrations/bosung.sql;
+SOURCE migrations/003_exam_catalog_metadata.sql;
 SOURCE schema/10_seed_data.sql;
 SOURCE schema/99_indexes_constraints.sql;
 -- Du lieu thu cho F10-F18 (tuy chon, KHONG dung tren DB that): SOURCE seed/seed_demo_f10_f18.sql;

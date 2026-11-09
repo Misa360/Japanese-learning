@@ -14,6 +14,25 @@ import java.util.List;
 
 public class LessonDao {
 
+    /** Danh sách mọi bài (kể cả bản nháp) của khóa học, làm phẳng thứ tự chương để admin không phải thao tác chương. */
+    public List<LessonOutlineItem> adminLessonsByCourse(Connection c, long courseId) throws SQLException {
+        String sql = "SELECT l.id,l.chapter_id,ch.title AS chapter_title,l.title,l.duration_seconds,l.is_preview,l.status "
+                + "FROM lessons l JOIN chapters ch ON ch.id=l.chapter_id WHERE ch.course_id=? ORDER BY ch.sort_order,l.sort_order,l.id";
+        List<LessonOutlineItem> out = new ArrayList<>();
+        try (PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setLong(1, courseId);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    LessonOutlineItem it = new LessonOutlineItem(); it.setId(rs.getLong("id"));
+                    it.setChapterId(rs.getLong("chapter_id")); it.setChapterTitle(rs.getString("chapter_title"));
+                    it.setTitle(rs.getString("title")); it.setDurationSeconds(rs.getInt("duration_seconds"));
+                    it.setPreview(rs.getBoolean("is_preview")); it.setStatus(rs.getString("status")); out.add(it);
+                }
+            }
+        }
+        return out;
+    }
+
     /** Bai hoc + chuong + khoa chua no (de kiem tra quyen o Service). */
     public LessonContext findContext(Connection c, long lessonId) throws SQLException {
         String sql = "SELECT l.id, l.title, l.duration_seconds, l.is_preview, l.status AS lesson_status, "
